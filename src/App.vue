@@ -233,6 +233,13 @@ export default {
       timeline: [
         {
           type: 'work',
+          title: 'Junior QA Automation Engineer',
+          org: 'ING',
+          period: 'czerwiec 2026 – teraz',
+          desc: 'Na stanowisku Junior QA Automation Engineer w ING zajmuję się tworzeniem i utrzymywaniem automatycznych przypadków testowych w języku Java. Projektuję scenariusze testowe w oparciu o Apache JMeter, a także sporządzam i aktualizuję dokumentację testową. Na co dzień aktywnie uczestniczę w codziennych spotkaniach zespołu (daily) oraz w szkoleniach rozwijających kompetencje techniczne.',
+        },
+        {
+          type: 'work',
           title: 'Associate Design Engineer I',
           org: 'Fluor Corporation',
           period: 'kwiecień 2025 – marzec 2026',
