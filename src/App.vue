@@ -263,6 +263,46 @@ export default {
 
       projects: [
         {
+          title: 'Shinecar44',
+          lang: 'JavaScript',
+          desc: 'Komercyjna strona dla studia car detailingu Shinecar44. Oferta, galeria realizacji i kontakt, wdrożona na shinecar44.pl.',
+          tech: ['JS', 'HTML', 'CSS', 'Bootstrap'],
+          updated: 'lip 2026',
+          link: 'https://github.com/Mafu2k/Shinecar44',
+        },
+        {
+          title: 'dziennik-podrozy',
+          lang: 'PHP',
+          desc: 'Aplikacja webowa w Yii 2 do zapisywania podróży: CRUD, walidacja, logowanie, migracje i REST API.',
+          tech: ['PHP', 'Yii 2', 'SQLite', 'REST API'],
+          updated: 'lip 2026',
+          link: 'https://github.com/Mafu2k/php---dziennik-podrozy',
+        },
+        {
+          title: 'portfolio-IOS',
+          lang: 'TypeScript',
+          desc: 'Mobilne portfolio w React Native (Expo). Profil, lista projektów z edycją i zapis lokalny w AsyncStorage.',
+          tech: ['React Native', 'Expo', 'TypeScript'],
+          updated: 'lip 2026',
+          link: 'https://github.com/Mafu2k/portfolio-IOS',
+        },
+        {
+          title: 'pdf-kompresor',
+          lang: 'Python',
+          desc: 'Program na Windows zmniejszający PDF-y przez kompresję samych obrazów. Tekst i wektory zostają ostre, obsługuje wiele plików naraz.',
+          tech: ['Python', 'PyMuPDF', 'Tkinter'],
+          updated: 'cze 2026',
+          link: 'https://github.com/Mafu2k/pdf-kompresor',
+        },
+        {
+          title: 'lingua',
+          lang: 'TypeScript',
+          desc: 'Tłumacz w czasie rzeczywistym dla 5 języków: rozmowa głosowa, tekst i OCR ze zdjęcia. Clean Architecture, CI.',
+          tech: ['Next.js', 'TypeScript', 'Tailwind', 'Web Speech API'],
+          updated: 'cze 2026',
+          link: 'https://github.com/Mafu2k/lingua',
+        },
+        {
           title: 'task-app',
           lang: 'Java',
           desc: 'Aplikacja do zarządzania zadaniami. REST API zbudowane w Spring Boocie.',
@@ -293,14 +333,6 @@ export default {
           tech: ['JS', 'HTML', 'CSS'],
           updated: 'mar 2026',
           link: 'https://github.com/Mafu2k/kon-spaw',
-        },
-        {
-          title: 'Shinecar44kn',
-          lang: 'JavaScript',
-          desc: 'Komercyjna strona dla klienta z car detailingu z Knurowa. Wdrożona na żywo.',
-          tech: ['JS', 'HTML', 'CSS'],
-          updated: 'mar 2026',
-          link: 'https://github.com/Mafu2k/Shinecar44kn',
         },
         {
           title: 'Streakify-IOS',
@@ -388,6 +420,12 @@ export default {
     },
   },
 
+  watch: {
+    activeFilter() {
+      this.$nextTick(() => ScrollTrigger.refresh())
+    },
+  },
+
   mounted() {
     this.initNav()
     this.initHero()
@@ -407,6 +445,9 @@ export default {
         JavaScript: '#d4b800',
         HTML: '#c0392b',
         Swift: '#e85d3b',
+        TypeScript: '#3178c6',
+        Python: '#3572a5',
+        PHP: '#777bb4',
       }
       return colors[lang] || '#4af0c4'
     },
@@ -961,7 +1002,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: var(--border);
+  background: var(--bg);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -970,6 +1011,7 @@ export default {
 .proj-card {
   position: relative;
   background: var(--bg);
+  box-shadow: 0 0 0 1px var(--border);
   padding: 22px;
   display: flex;
   flex-direction: column;
