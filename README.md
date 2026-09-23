@@ -63,14 +63,24 @@ portfolio/
 
 | Projekt | Technologie | Opis |
 |---|---|---|
+| Shinecar44 | JS, HTML, CSS, Bootstrap | Komercyjna strona studia car detailingu (shinecar44.pl) |
+| dziennik-podrozy | PHP, Yii 2, SQLite | Aplikacja do zapisywania podróży z REST API |
+| portfolio-IOS | React Native, Expo, TypeScript | Mobilne portfolio z lokalnym zapisem danych |
+| pdf-kompresor | Python, PyMuPDF, Tkinter | Kompresor plików PDF na Windows |
+| lingua | Next.js, TypeScript, Tailwind | Tłumacz w czasie rzeczywistym (głos, tekst, OCR) |
 | task-app | Java, Spring Boot | Aplikacja do zarządzania zadaniami (REST API) |
 | OPSW11 | C#, .NET, WPF | Narzędzie do optymalizacji Windows 11 |
 | WoloPIPE | HTML, CSS, JS | Strona dla firmy instalacyjno-budowlanej |
-| Shinecar44kn | JS, HTML, CSS | Komercyjna strona dla studia car detailingu |
+| kon-spaw | JS, HTML, CSS | Strona wizytówka dla firmy spawalniczej |
 | Streakify-IOS | Swift, UIKit | Aplikacja iOS do śledzenia nawyków |
 | SZA-helpdesk | Java, Spring Boot, PostgreSQL | System ticketowy |
 | fakeOLX | Kotlin, Spring Boot, PostgreSQL | Klon platformy ogłoszeniowej |
-| kon-spaw | JS, HTML, CSS | Strona wizytówka dla firmy spawalniczej |
+| Finanse-Domowe-Android | Kotlin, Android, SQLite | Aplikacja do budżetowania domowego |
+| Contact-Manager | JavaScript | Manager kontaktów (CRUD, localStorage) |
+| aac-app-web | HTML, CSS, JS | Aplikacja wspierająca komunikację alternatywną |
+| foodpanda-analytics | JavaScript, Chart.js | Dashboard analityczny |
+| todolist | Java, Spring Boot | Lista zadań |
+| portfolio-v1 | HTML, CSS | Pierwsza wersja portfolio |
 
 ---
 
