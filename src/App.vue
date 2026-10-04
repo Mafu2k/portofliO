@@ -9,7 +9,7 @@
           <a href="#projekty">projekty</a>
           <a href="#kontakt">kontakt</a>
         </div>
-        <button class="nav-burger" @click="mobileOpen = !mobileOpen" :class="{ open: mobileOpen }">
+        <button class="nav-burger" aria-label="Menu" :aria-expanded="mobileOpen" @click="mobileOpen = !mobileOpen" :class="{ open: mobileOpen }">
           <span/><span/><span/>
         </button>
       </div>
@@ -23,15 +23,15 @@
     <section class="hero" id="top">
       <div class="hero-wrap">
         <div class="hero-left">
-          <p class="hero-kicker" ref="kicker">student informatyki / backend dev</p>
+          <p class="hero-kicker" ref="kicker">tester automatyzujący · java / spring boot</p>
           <h1 class="hero-h1" ref="heroTitle">
             <span class="h1-line" ref="line1">Łukasz</span>
             <span class="h1-line accent-line" ref="line2">Janicki</span>
           </h1>
           <p class="hero-bio" ref="heroBio">
-            Student 3. roku Akademii Śląskiej i początkujący programista backendowy.
-            Tworzę aplikacje głównie w Javie (Spring) i Kotlinie. Aktywnie rozwijam się
-            w obszarze integracji rozwiązań AI w nowoczesnym oprogramowaniu.
+            Student informatyki na Akademii Śląskiej. Od czerwca 2026 pracuję w ING
+            jako tester automatyzujący. Programuję w Javie (Spring Boot) i Kotlinie,
+            a najbardziej interesuje mnie bezpieczeństwo aplikacji.
           </p>
           <div class="hero-btns" ref="heroBtns">
             <a href="#projekty" class="btn-fill">projekty</a>
@@ -44,6 +44,10 @@
         <div class="hero-right" ref="heroRight">
           <div class="hero-card">
             <div class="hc-row">
+              <span class="hc-label">obecnie</span>
+              <span class="hc-val">ING · QA automation</span>
+            </div>
+            <div class="hc-row">
               <span class="hc-label">lokalizacja</span>
               <span class="hc-val">Knurów, śląsk</span>
             </div>
@@ -54,6 +58,10 @@
             <div class="hc-row">
               <span class="hc-label">specjalizacja</span>
               <span class="hc-val">aplikacje web&mobile</span>
+            </div>
+            <div class="hc-row">
+              <span class="hc-label">języki</span>
+              <span class="hc-val">polski, angielski B2+</span>
             </div>
 
             <div class="hc-divider"/>
@@ -75,16 +83,16 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              Student 3. roku Akademii Śląskiej specjalizujący się w backendzie
-              (Spring Boot, REST API) oraz rozwiązaniach mobilnych (Kotlin, Flutter).
+              W ING piszę i utrzymuję testy automatyczne aplikacji oraz API (JUnit, JMeter, jPOS),
+              podpinam je pod pipeline'y CI/CD i razem z developerami analizuję defekty.
             </p>
             <p>
-              Posiadam zaplecze zawodowe zdobyte w Exorigo-UPOS i Fluor Corporation,
-              gdzie pracowałem z infrastrukturą IT oraz narzędziami inżynierskimi.
+              Wcześniej projektowałem instalacje przemysłowe w Fluor Corporation, a na praktykach
+              w Exorigo-Upos administrowałem serwerami Windows Server i Linux.
             </p>
             <p>
-              Obecnie moją główną pasją jest praktyczna integracja modeli sztucznej
-              inteligencji w aplikacjach.
+              Po godzinach piszę w Javie (Spring Boot) i Kotlinie (Android). Chcę rozwijać się
+              w stronę backendu i bezpieczeństwa aplikacji.
             </p>
           </div>
           <div class="about-skills">
@@ -105,7 +113,7 @@
         <div class="xp-list">
           <div v-for="item in timeline" :key="item.title" class="xp-item reveal-item">
             <div class="xp-meta">
-              <span class="xp-type" :class="item.type">{{ item.type === 'edu' ? 'edu' : 'praca' }}</span>
+              <span class="xp-type" :class="item.type">{{ typeLabels[item.type] }}</span>
               <span class="xp-period">{{ item.period }}</span>
             </div>
             <div class="xp-body">
@@ -146,7 +154,6 @@
             <div class="pc-top">
               <span class="pc-lang-dot" :style="{ background: langColor(p.lang) }"/>
               <span class="pc-lang mono">{{ p.lang }}</span>
-              <span class="pc-date mono">{{ p.updated }}</span>
             </div>
             <h3 class="pc-title">{{ p.title }}</h3>
             <p class="pc-desc">{{ p.desc }}</p>
@@ -166,8 +173,8 @@
           <div class="contact-left">
             <h2 class="contact-h2">porozmawiajmy</h2>
             <p class="contact-sub">
-              Najszybciej odpowiem na maila. Chętnie porozmawiam o możliwościach
-              współpracy lub stażu.
+              Najszybciej odpowiem na maila. Chętnie porozmawiam o pracy,
+              współpracy albo ciekawym projekcie.
             </p>
           </div>
           <div class="contact-right">
@@ -213,6 +220,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 const ALL = 'Wszystkie'
 const DEFAULT_LANG_COLOR = '#4af0c4'
+const TYPE_LABELS = { work: 'praca', award: 'nagroda', edu: 'edu' }
 
 export default {
   data() {
@@ -223,6 +231,7 @@ export default {
       skills,
       timeline,
       projects,
+      typeLabels: TYPE_LABELS,
     }
   },
 
@@ -243,7 +252,9 @@ export default {
   },
 
   mounted() {
-    this.initNav()
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    this.initNav(reduceMotion)
+    if (reduceMotion) return
     this.initHero()
     this.initScrollReveal()
   },
@@ -257,8 +268,8 @@ export default {
       return langColors[lang] ?? DEFAULT_LANG_COLOR
     },
 
-    initNav() {
-      gsap.from(this.$refs.nav, {
+    initNav(reduceMotion) {
+      if (!reduceMotion) gsap.from(this.$refs.nav, {
         y: -24,
         opacity: 0,
         duration: 0.7,
@@ -723,6 +734,12 @@ export default {
   background: rgba(74, 240, 196, 0.08);
   color: var(--accent);
   border: 1px solid rgba(74, 240, 196, 0.2);
+}
+
+.xp-type.award {
+  background: rgba(240, 196, 74, 0.08);
+  color: #f0c44a;
+  border: 1px solid rgba(240, 196, 74, 0.2);
 }
 
 .xp-type.edu {

@@ -19,7 +19,8 @@ z doświadczeniem, lista projektów i kolory języków, są w `src/data/profile.
 projekt albo zmienić opis, wystarczy edytować ten plik bez ruszania szablonu.
 Filtry w sekcji projektów generują się same na podstawie pola `lang`.
 
-Domena jest ustawiona w `public/CNAME`.
+Po każdym pushu na `main` workflow `.github/workflows/deploy.yml` buduje stronę i publikuje ją
+na gałęzi `gh-pages`, z której serwuje ją GitHub Pages pod domeną z `public/CNAME`.
 
 ## Licencja
 
