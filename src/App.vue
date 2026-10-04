@@ -29,9 +29,9 @@
             <span class="h1-line accent-line" ref="line2">Janicki</span>
           </h1>
           <p class="hero-bio" ref="heroBio">
-            Student informatyki na Akademii Śląskiej. Od czerwca 2026 pracuję w ING
-            jako tester automatyzujący. Programuję w Javie (Spring Boot) i Kotlinie,
-            a najbardziej interesuje mnie bezpieczeństwo aplikacji.
+            Student 3. roku Akademii Śląskiej i początkujący programista backendowy.
+            Tworzę aplikacje głównie w Javie (Spring) i Kotlinie. Aktywnie rozwijam się
+            w obszarze integracji rozwiązań AI w nowoczesnym oprogramowaniu.
           </p>
           <div class="hero-btns" ref="heroBtns">
             <a href="#projekty" class="btn-fill">projekty</a>
@@ -83,16 +83,16 @@
         <div class="about-grid">
           <div class="about-text">
             <p>
-              W ING piszę i utrzymuję testy automatyczne aplikacji oraz API (JUnit, JMeter, jPOS),
-              podpinam je pod pipeline'y CI/CD i razem z developerami analizuję defekty.
+              Student 3. roku Akademii Śląskiej specjalizujący się w backendzie
+              (Spring Boot, REST API) oraz rozwiązaniach mobilnych (Kotlin, Flutter).
             </p>
             <p>
-              Wcześniej projektowałem instalacje przemysłowe w Fluor Corporation, a na praktykach
-              w Exorigo-Upos administrowałem serwerami Windows Server i Linux.
+              Posiadam zaplecze zawodowe zdobyte w Exorigo-UPOS i Fluor Corporation,
+              gdzie pracowałem z infrastrukturą IT oraz narzędziami inżynierskimi.
             </p>
             <p>
-              Po godzinach piszę w Javie (Spring Boot) i Kotlinie (Android). Chcę rozwijać się
-              w stronę backendu i bezpieczeństwa aplikacji.
+              Obecnie moją główną pasją jest praktyczna integracja modeli sztucznej
+              inteligencji w aplikacjach.
             </p>
           </div>
           <div class="about-skills">
